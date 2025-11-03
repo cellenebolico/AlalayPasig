@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AlalayPasig</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #E9E8F5;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        .logo h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #5b5bff;
+            background-color: rgba(91, 91, 255, 0.1);
+        }
+
+        /* Services Header Style */
+        .services-header {
+            margin: 30px 0;
+            position: relative;
+            padding: 0 2%;
+        }
+
+        .services-title {
+            background-color: #515D7B;
+            width: 50%;
+            height: 70px;
+            text-align: center;
+            padding: 10px;
+            margin-left: 2%;
+            color: white;
+            font-size: 2rem;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-box {
+            background-color: #7689D7;
+            width: 96%;
+            height: 70px;
+            margin-left: 2%;
+            border-radius: 8px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .Grow-an-enemy-ulit {
+            background-color: #D9D9D9;
+            width: 90%;
+            max-width: 1476px;
+            height: auto;
+            margin: 70px auto 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .Grow-an-enemy-ulit h2 {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .Grow-an-enemy-ulit p {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 30px;
+            text-align: center;
+            position: relative;
+            letter-spacing: 2px;
+        }
+
+        .devteam, .researchteam {
+            background-color: #D9D9D9;
+            width: 90%;
+            max-width: 700px;
+            height: auto;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-bottom: -30px;
+        }
+
+        .devteam h2, .researchteam h2 {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: -10px;
+        }
+
+        /* IMPROVED TEAM SECTIONS - RESPONSIVE */
+        .developmentteam, .researchteam-eyy {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 5% 30px;
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background-color: #D9D8F3;
+            width: 100%;
+            height: auto;
+            min-height: 500px;
+            padding: 25px;
+            border-radius: 8%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.4s ease;
+            width: 100%;
+        }
+
+        /* UPDATED: Full-width images on mobile */
+        .member-img {
+            width: 100%;
+            max-width: 300px;
+            height: 250px;
+            border-radius: 10%;
+            object-fit: cover;
+            padding: 10px;
+            margin-top: -15px;
+            transition: all 0.3s ease;
+        }
+
+        .member-profile {
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+        }
+
+        .member-profile h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: black;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .member-profile p {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: black;
+            line-height: 1.3;
+        }
+
+        .member-profile p:last-of-type {
+            line-height: 1.3;
+            margin-bottom: 0;
+        }
+
+        .hidden-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #D9D8F3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(20px);
+            text-align: center;
+            border-radius: 8%;
+            transition: all 0.4s ease;
+        }
+
+        .hidden-info h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .hidden-info p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: black;
+            width: 100%;
+        }
+
+        .hidden-info p:last-of-type {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #0B244A;
+            width: 100%;
+        }
+
+        .team-member.active .profile-container {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .team-member.active .hidden-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #194C97;
+            color: white;
+            padding: 50px 5% 20px;
+            margin-top: 80px;
+        }
+
+        .foot {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .half {
+            flex: 1;
+        }
+
+        .half .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .half .logo img {
+            height: 50px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .half .logo h3 {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .p4 {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .sites {
+            display: flex;
+            gap: 15px;
+        }
+
+        .sites img {
+            width: 40px;
+            height: 40px;
+            border-radius: 30%;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .sites img:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
+        .half2 {
+            flex: 1;
+            display: flex;
+            gap: 120px;
+        }
+
+        .links h3, .contacts h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .links h3::after, .contacts h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #5b5bff;
+        }
+
+        .links a, .contacts p, .contacts a {
+            color: white;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .links a:hover, .contacts a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        footer hr {
+            border: none;
+            height: 1px;
+            background-color: white;
+            margin: 40px auto 20px;
+            max-width: 1200px;
+        }
+
+        .privacy {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .privacy p {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .right p {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .right p:hover {
+            color: #f0f0f0;
+        }
+        .right a {
+            color: white;
+            text-decoration: none;
+        }
+        .right a:hover {
+            color: #f0f0f0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .developmentteam, .researchteam-eyy {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 30px;
+            }
+            
+            .team-member {
+                min-height: 480px;
+            }
+            
+            .member-img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .services-title {
+                width: 60%;
+            }
+            
+            .Grow-an-enemy-ulit h2,
+            .Grow-an-enemy-ulit p {
+                font-size: 28px;
+            }
+            
+            .member-profile h3 {
+                font-size: 22px;
+            }
+            
+            .member-profile p {
+                font-size: 16px;
+            }
+            
+            .hidden-info p {
+                font-size: 16px;
+            }
+            
+            .half2 {
+                gap: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px 10px;
+            }
+
+            nav {
+                justify-content: center;
+                padding: 10px 0;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            .services-title {
+                width: 70%;
+                font-size: 1.8rem;
+                height: 60px;
+                padding: 15px;
+            }
+            
+            .services-box {
+                height: 60px;
+                margin-top: -40px;
+            }
+            
+            .Grow-an-enemy-ulit {
+                padding: 20px;
+                margin-top: 50px;
+            }
+            
+            .Grow-an-enemy-ulit h2,
+            .Grow-an-enemy-ulit p {
+                font-size: 24px;
+                margin-left: 0;
+                text-align: center;
+            }
+            
+            .devteam, .researchteam {
+                width: 80%;
+                padding: 20px;
+            }
+            
+            .devteam h2, .researchteam h2 {
+                font-size: 28px;
+            }
+            
+            .developmentteam, .researchteam-eyy {
+                grid-template-columns: 1fr;
+                padding: 60px 5% 30px;
+                gap: 30px;
+            }
+            
+            .team-member {
+                min-height: 450px;
+                padding: 20px;
+            }
+            
+            /* UPDATED: Full-width images on tablet */
+            .member-img {
+                width: 100%;
+                max-width: 100%;
+                height: 280px;
+                border-radius: 15px;
+                padding: 0;
+                margin: 0 0 15px 0;
+            }
+            
+            .member-profile h3 {
+                font-size: 20px;
+            }
+            
+            .member-profile p {
+                font-size: 15px;
+            }
+            
+            .hidden-info {
+                padding: 20px;
+            }
+            
+            .hidden-info p {
+                font-size: 15px;
+            }
+            
+            .foot {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .half2 {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .privacy {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .right {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .links h3, .contacts h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contacts h3, .links h3 {
+                text-align: center;
+            }
+            
+            .contacts p, .contacts a, .links a {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-title {
+                width: 80%;
+                font-size: 1.5rem;
+                height: 50px;
+                padding: 12px;
+                margin-top: 5%;
+            }
+            
+            .services-box {
+                height: 50px;
+                margin-top: -35px;
+            }
+            
+            .Grow-an-enemy-ulit {
+                margin: 30px auto 0;
+                padding: 15px;
+            }
+            
+            .Grow-an-enemy-ulit h2,
+            .Grow-an-enemy-ulit p {
+                font-size: 20px;
+            }
+            
+            .devteam, .researchteam {
+                width: 90%;
+                padding: 15px;
+                margin-bottom: 0;
+            }
+            
+            .devteam h2, .researchteam h2 {
+                font-size: 24px;
+            }
+            
+            .developmentteam, .researchteam-eyy {
+                padding: 50px 5% 20px;
+                gap: 25px;
+            }
+            
+            .team-member {
+                min-height: 420px;
+                padding: 15px;
+                border-radius: 15px;
+            }
+            
+            /* UPDATED: Full-width images on mobile */
+            .member-img {
+                width: 100%;
+                max-width: 100%;
+                height: 250px;
+                border-radius: 12px;
+                padding: 0;
+                margin: 0 0 15px 0;
+            }
+            
+            .member-profile h3 {
+                font-size: 18px;
+            }
+            
+            .member-profile p {
+                font-size: 14px;
+            }
+            
+            .hidden-info {
+                padding: 15px;
+                border-radius: 15px;
+            }
+            
+            .hidden-info p {
+                font-size: 14px;
+            }
+            
+            nav {
+                gap: 10px;
+            }
+            
+            nav a {
+                font-size: 16px;
+                padding: 5px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-title {
+                width: 90%;
+                font-size: 1.3rem;
+                height: 45px;
+                padding: 10px;
+            }
+            
+            .services-box {
+                height: 45px;
+                margin-top: -30px;
+            }
+            
+            .Grow-an-enemy-ulit h2,
+            .Grow-an-enemy-ulit p {
+                font-size: 18px;
+            }
+            
+            .devteam h2, .researchteam h2 {
+                font-size: 20px;
+            }
+            
+            .developmentteam, .researchteam-eyy {
+                padding: 40px 5% 15px;
+                gap: 20px;
+            }
+            
+            .team-member {
+                min-height: 400px;
+                padding: 12px;
+            }
+            
+            /* UPDATED: Full-width images on small mobile */
+            .member-img {
+                width: 100%;
+                max-width: 100%;
+                height: 220px;
+                border-radius: 10px;
+                padding: 0;
+                margin: 0 0 12px 0;
+            }
+            
+            .member-profile h3 {
+                font-size: 17px;
+            }
+            
+            .member-profile p {
+                font-size: 13px;
+            }
+            
+            .hidden-info p {
+                font-size: 13px;
+            }
+            
+            footer {
+                padding: 40px 20px 15px;
+            }
+            
+            .half {
+                text-align: center;
+            }
+            
+            .half .logo h3 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+            
+            .p4 {
+                font-size: 1rem;
+            }
+            
+            .links h3, .contacts h3 {
+                font-size: 1.2rem;
+            }
+            
+            .logo img {
+                height: 45px;
+                width: 60px;
+            }
+            
+            .logo h3 {
+                font-size: 1.2rem;
+            }
+            
+            nav {
+                gap: 8px;
+            }
+            
+            nav a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .services-title {
+                font-size: 1.1rem;
+            }
+            
+            .Grow-an-enemy-ulit h2,
+            .Grow-an-enemy-ulit p {
+                font-size: 16px;
+            }
+            
+            .devteam h2, .researchteam h2 {
+                font-size: 18px;
+            }
+            
+            .developmentteam, .researchteam-eyy {
+                padding: 30px 5% 10px;
+                gap: 15px;
+            }
+            
+            .team-member {
+                min-height: 380px;
+                padding: 10px;
+            }
+            
+            /* UPDATED: Full-width images on very small mobile */
+            .member-img {
+                width: 100%;
+                max-width: 100%;
+                height: 200px;
+                border-radius: 8px;
+                padding: 0;
+                margin: 0 0 10px 0;
+            }
+            
+            .member-profile h3 {
+                font-size: 16px;
+            }
+            
+            .member-profile p {
+                font-size: 12px;
+            }
+            
+            .hidden-info p {
+                font-size: 12px;
+            }
+            
+            nav a {
+                font-size: 12px;
+                padding: 4px 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div class="logo">
+        <img src="../Pictures/logo.png" alt="Logo ng AlalayPasig">
+        <h3>AlalayPasig</h3>
+    </div>
+    <nav>
+        <a href="homepage1.html">Home</a>
+        <a href="../login.html">Mga Serbisyo</a>
+        <a href="AboutUs-notLogin.html">Tungkol sa Amin</a>
+        <a href="contacts-notLogin.html">Makipag-ugnayan</a>
+    </nav>
+</header>
+    
+    <div class="services-header">
+        <h2 class="services-title">TUNGKOL SA AMIN</h2>
+        <div class="services-box"></div>
+    </div>
+
+    <div class="Grow-an-enemy-ulit">
+        <h2>GROW AN ENEMY</h2>
+        <p>Sa bawat hadlang, HINDI KAMI SUMUSUKO-ginagawa naming lakas at hamon ang bawat <br>
+        "ENEMY" na humaharang sa aming daan. Sa <br>
+        Alalay Pasig, naghahatid kami ng Accessibility at Serbisyo upang walang Filipino <br>
+        ang maiiwan sa Pasig City.</p>
+    </div>
+
+    <div class="devteam">
+        <h2>DEVELOPMENT TEAM</h2>
+    </div>
+
+    <div class="developmentteam">
+        <div class="team-member" id="cellene">
+            <div class="profile-container">
+                <img src="../Pictures/cellene.png" alt="cellene" class="member-img">
+                <div class="member-profile">
+                    <h3>MARIA CELLENE BOLICO</h3>
+                    <p>FRONT-END DEVELOPER</p>
+                    <p>DevOps Engineer</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Nagfo-focus sa user-facing na bahagi ng application - kung ano ang nakikita at nakaka-interact ang mga user sa kanilang web browser o app.</p>
+                <p>Ako ang unang mukha ng proyekto. Bawat click at kulay ay mahalaga, dahil ang karanasan ng user ay nagsisimula sa akin.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="cholo">
+            <div class="profile-container">
+                <img src="../Pictures/cholo.png" alt="cholo" class="member-img">
+                <div class="member-profile">
+                    <h3>CHOLO RUIZ CONCEPCION</h3>
+                    <p>UX DESIGNER</p>
+                    <p>Cyber Security</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Responsible sa user experience, tiyakin na ang produkto ay madali, efficient, at masaya gamitin.</p>
+                <p>Hindi lang ang beauty ang mahalaga - ito ang flow ng paggamit. Tinitiyak ko na lahat ay simple, logical, at madali para sa bawat user.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="katrina">
+            <div class="profile-container">
+                <img src="../Pictures/katrina.png" alt="katrina" class="member-img">
+                <div class="member-profile">
+                    <h3>KATRINA BERMAS</h3>
+                    <p>UI DESIGNER</p>
+                    <p>Visual Design Lead</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Responsible sa user interface, nagde-deal sa look and feel—ang visual na elements at interactivity ng produkto.</p>
+                <p>Ang kalinisan, kulay, at form ay depende sa akin. Sa huli, ang aking disenyo ay nagbibigay buhay at appealing na look sa idea.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="cheng">
+            <div class="profile-container">
+                <img src="../Pictures/cheng.png" alt="cheng" class="member-img">
+                <div class="member-profile">
+                    <h3>MICHAEL JOHN BATION</h3>
+                    <p>BACK-END DEVELOPER</p>
+                    <p>Principal Architect</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Nagtatrabaho sa server-side, database, at application logic na nagpapatakbo ng produkto mula sa likod ng eksena.</p>
+                <p>Kami ang mga haligi at engine sa likod ng lahat. Habang ang front ay maganda ang tingin, tinitiyak namin na ang mga function ng internet ay robust at mabilis.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="leo">
+            <div class="profile-container">
+                <img src="../Pictures/leo.png" alt="leo" class="member-img">
+                <div class="member-profile">
+                    <h3>LEO VOLANTE</h3>
+                    <p>BACK-END DEVELOPER</p>
+                    <p>VP of Technology</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Naghahandle ng server-side na operasyon, namamahala ng database, at nagde-develop ng core application logic na sumusuporta sa produkto sa likod ng eksena.</p>
+                <p>Kami ang backbone at engine sa likod ng lahat. Habang ang front end ay sumisikat, tinitiyak namin na ang internet ay tumatakbo nang smooth, reliable, at mabilis.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="collene">
+            <div class="profile-container">
+                <img src="../Pictures/collene.png" alt="collene" class="member-img">
+                <div class="member-profile">
+                    <h3>MARIA COLLENE BOLICO</h3>
+                    <p>FULL STACK DEVELOPER</p>
+                    <p>Network Administrator</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Nagtatrabaho sa parehong front-end at back-end, nagha-handle ng buong development process mula sa user interface hanggang sa server logic.</p>
+                <p>Ako ang bridge sa pagitan ng front at back. Tinitiyak ko na ang karanasan ng user ay seamless mula sa interface hanggang sa server.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="researchteam">
+        <h2>RESEARCH TEAM</h2>
+    </div>
+
+    <div class="researchteam-eyy">
+        <div class="team-member" id="kirby">
+            <div class="profile-container">
+                <img src="../Pictures/kirby.png" alt="kirby" class="member-img">
+                <div class="member-profile">
+                    <h3>CAMPIPI JOHN KIRBY</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Investment Analyst</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="ellah">
+            <div class="profile-container">
+                <img src="../Pictures/ellah.png" alt="ellah" class="member-img">
+                <div class="member-profile">
+                    <h3>HILOMA MERCY ELLAH</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Project Manager</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="botor">
+            <div class="profile-container">
+                <img src="../Pictures/botor.png" alt="botor" class="member-img">
+                <div class="member-profile">
+                    <h3>BOTOR GLADIMIRE</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Business Development</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="cuenca">
+            <div class="profile-container">
+                <img src="../Pictures/cuenca.png" alt="cuenca" class="member-img">
+                <div class="member-profile">
+                    <h3>CUENCA RIEZA MAE</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Research Analyst</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="gian">
+            <div class="profile-container">
+                <img src="../Pictures/gian.png" alt="gian" class="member-img">
+                <div class="member-profile">
+                    <h3>KARL GIAN GABAYNO</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Strategic Consultant</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+
+        <div class="team-member" id="judy">
+            <div class="profile-container">
+                <img src="../Pictures/judy.png" alt="judy" class="member-img">
+                <div class="member-profile">
+                    <h3>BORDEOS JUDY ANN</h3>
+                    <p>RESEARCH PAPER</p>
+                    <p>Compliance Officer</p>
+                </div>
+            </div>
+            <div class="hidden-info">
+                <p>Ang grupong ito ang nag-aaral, nagtitipon ng datos, at nagsusulat ng opisyal na papel o dokumento para sa proyekto.</p>
+                <p>Ang bawat pananaliksik ay paglalakbay tungo sa katotohanan; tanging masusing pag-aaral ang magsisilbing mapa.</p>
+            </div>
+        </div>
+    </div>
+
+<footer>
+    <div class="foot">
+        <div class="half">
+            <div class="logo">
+                <img src="Pictures/logo.png" alt="Logo ng AlalayPasig">
+                <h3>AlalayPasig</h3>
+            </div>
+            <h3 class="p4">Nagkokonekta sa mga Taong May Kapansanan sa Pasig <br>City sa mga mahalagang serbisyo at resources na<br> nagpapabuti ng kalidad ng buhay.</h3>
+            <div class="sites">
+                <a href="https://www.facebook.com/people/AlalayPasig/61581784424488/"><img src="Pictures/Facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/alalay_pasig/"><img src="Pictures/Instagram.png" alt="Instagram"></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTKWKqdkmhsxlpSrVQwQWBBZRpmqNGJHQRxKpzgFkCjTNDwMBvXnQzQVqVPCqXQpxwtcSB"><img src="Pictures/Mail.png" alt="Email"></a>
+            </div>
+        </div>
+
+        <div class="half2">
+            <div class="links">
+                <h3>Mga Quick Links</h3>
+                <a href="homepage1.html">Home</a>
+                <a href="AboutUs-notLogin.html">Tungkol sa amin</a>
+                <a href="contacts-notLogin.html">Makipag-ugnayan</a>
+            </div>
+
+            <div class="contacts">
+                <h3>Makipag-ugnayan sa Amin</h3>
+                <p>Pasig City Hall, Caruncho Ave. Pasig City</p>
+                <p>alalaypasig@agmail.com</p>
+                <p>09952247885</p>
+                <p><a href="contacts-notLogin.html">Pahina ng Makipag-ugnayan</a></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="privacy">
+        <p class="left">©2025 AlalayPasig. Lahat ng karapatan ay nakalaan.</p>
+        <div class="right">
+            <p><a href="Privacy and Policy-notLogin.html">Patakaran sa Privacy</a></p>
+            <p><a href="Terms of Services-notLogin.html">Mga Tuntunin ng Serbisyo</a></p>
+            <p><a href="Accessibility Statement-notLogin.html">Pahayag sa Accessibility</a></p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            teamMembers.forEach(member => {
+                member.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
