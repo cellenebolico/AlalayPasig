@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable housing application</title>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+        }
+        header {
+            background-color: #E9E8F5;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        .logo h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #5b5bff;
+            background-color: rgba(91, 91, 255, 0.1);
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px 10px;
+            }
+
+            nav {
+                justify-content: center;
+                padding: 10px 0;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {            
+            nav {
+                gap: 10px;
+            }
+            
+            nav a {
+                font-size: 16px;
+                padding: 5px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 45px;
+                width: 60px;
+            }
+            
+            .logo h3 {
+                font-size: 1.2rem;
+            }
+            
+            nav {
+                gap: 8px;
+            }
+            
+            nav a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            nav a {
+                font-size: 12px;
+                padding: 4px 6px;
+            }
+        }
+        
+        .services-header {
+            margin: 30px 0;
+            position: relative;
+            padding: 0 2%;
+            height: auto;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+        }
+
+        .services-text {
+            background-color: #515D7B;
+            width: 80%;
+            min-height: 100px;
+            text-align: center;
+            padding: 15px 20px;
+            margin-left: 2%;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-text h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .services-text p {
+            font-size: 1.3rem;
+            margin: 5px 0 0 0;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .services-box {
+            background-color: #7689D7;
+            width: 92%;
+            height: 140px;
+            margin-left: 2%;
+            border-radius: 8px;
+            position: absolute;
+            top: 10px;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            margin: 5% 4% 0 4%;
+        }
+        
+        .content h3 {
+            background-color: #7689D7;
+            color: white;
+            font-size: 1.8rem;
+            width: fit-content;
+            max-width: 100%;
+            padding: 15px 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+        
+        .content-box {
+            background-color: #D9D9D9;
+            width: 100%;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -1.6%;
+            overflow: hidden;
+            text-align: left;
+        }
+        
+        .content-box ul {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            padding-left: 50px;
+            padding-bottom: 20px;
+            margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            clear: both;
+        }
+
+        .content-box li {
+            margin-bottom: 10px;
+        }
+        
+        .content-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            float: left;
+        }
+
+        
+        .information {
+            padding-bottom: 5%;
+        }
+ 
+        footer {
+            background-color: #194C97;
+            color: var(--white);
+            padding: 50px 5% 20px;
+            margin-top: 0px;
+        }
+
+        .foot {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .half {
+            flex: 1;
+        }
+
+        .half .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .half .logo img {
+            height: 50px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .half .logo h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 700;
+            color: white;
+        }
+
+        .p4 {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .sites {
+            display: flex;
+            gap: 15px;
+        }
+
+        .sites img {
+            width: 40px;
+            height: 40px;
+            border-radius: 30%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .sites img:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
+        .half2 {
+            flex: 1;
+            display: flex;
+            gap: 120px;
+        }
+
+        .links h3, .contacts h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .links h3::after, .contacts h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .links a, .contacts p, .contacts a {
+            color: white;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .links a:hover, .contacts a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        footer hr {
+            border: none;
+            height: 1px;
+            background-color: white;
+            margin: 40px auto 20px;
+            max-width: 1200px;
+        }
+
+        .privacy {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .privacy p {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .right p {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .right p:hover {
+            color: var(--white);
+        }
+        .right a {
+            color: white;
+            text-decoration: none;
+        }
+        .right a:hover {
+            color: black;
+        }
+
+        @media (max-width: 1024px) {
+            .half2 {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .foot {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .half2 {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .privacy {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .right {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .links h3, .contacts h3 {
+                font-size: 1.2rem;
+            }
+            .contacts h3, .links h3 {
+                text-align: center;
+            }
+            .contacts p, .contacts a, .links a{
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 40px 20px 15px;
+                
+            }
+            .half {
+                text-align: center;
+            }
+            
+            .half .logo h3 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+            
+            .p4 {
+                font-size: 1rem;
+            }
+            
+            .links h3, .contacts h3 {
+                font-size: 1.2rem;
+            }
+            .contacts h3, .links h3 {
+                text-align: center;
+            }
+            .contacts p, .contacts a, .links a{
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .services-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .services-text p {
+                font-size: 1.2rem;
+            }
+            
+            .content-box ul {
+                font-size: 1.4rem;
+                padding-left: 80px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .services-text h2 {
+                font-size: 2rem;
+            }
+            
+            .services-text p {
+                font-size: 1.1rem;
+            }
+            
+            .content h3 {
+                font-size: 1.6rem;
+            }
+            
+            .content-box ul {
+                font-size: 1.3rem;
+                padding-left: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-header {
+                height: auto;
+                min-height: 120px;
+            }
+            
+            .services-box {
+                height: 120px;
+            }
+            
+            .services-text {
+                width: 85%;
+                padding: 12px 15px;
+            }
+            
+            .services-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .services-text p {
+                font-size: 1rem;
+            }
+            
+            .content h3 {
+                font-size: 1.4rem;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            
+            .content-box ul {
+                font-size: 1.2rem;
+                padding-left: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-header {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .services-box {
+                position: relative;
+                width: 100%;
+                height: 20px;
+                margin-left: 0;
+                margin-bottom: -10px;
+            }
+            
+            .services-text {
+                width: 100%;
+                margin-left: 0;
+                text-align: center;
+            }
+            
+            .services-text h2 {
+                font-size: 1.6rem;
+            }
+            
+            .services-text p {
+                font-size: 0.9rem;
+            }
+            
+            .content {
+                margin: 10% 3% 0 3%;
+            }
+            
+            .content h3 {
+                font-size: 1.3rem;
+                padding: 10px 15px;
+            }
+            
+            .content-box {
+                padding: 15px;
+            }
+            
+            .content-box ul {
+                font-size: 1.1rem;
+                padding-left: 20px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .services-text h2 {
+                font-size: 1.4rem;
+            }
+            
+            .services-text p {
+                font-size: 0.85rem;
+            }
+            
+            .content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .content-box ul {
+                font-size: 1rem;
+                padding-left: 15px;
+            }
+        }
+        .important-note, .important-note2 {
+            background-color: #7689D7;
+            text-align: center;
+            width: 60%;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px auto;
+            font-weight: bold;
+            margin-top: 5%;
+            color: white;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .important-note3 {
+            text-align: center;
+            width: 94%;
+            font-size: 1.3rem;
+            padding: 20px;
+            margin: 15px auto;
+            font-weight: normal;
+            margin-top: -3%;
+            color: black;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .important-note {
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        .important-note2 {
+            width: 50%;
+            margin: 45px auto;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        .important-note3 {
+            width: 80%;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .content h2 {
+            background-color: #7689D7;
+            color: white;
+            font-size: 1.5rem;
+            width: fit-content;
+            max-width: 100%;
+            padding: 15px 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            float: left;
+            margin-top: 4%;
+        }
+        
+        .content-box-table table {
+            width: auto;
+            min-width: 600px;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 1.3rem;
+        }
+        
+        .content-box-table th, .content-box-table td {
+            border: 1px solid white;
+            padding: 12px 15px;
+            text-align: center;
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+        
+        .content-box-table th {
+            background-color: #515D7B;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .content-box-table tr:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .content-box-table a {
+            color: #194C97;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .content-box-table a:hover {
+            text-decoration: underline;
+            color: #5b5bff;
+        }
+        
+        .content-box-table table th:nth-child(1),
+        .content-box-table table td:nth-child(1) {
+            width: 33%;
+        }
+        
+        .content-box-table table th:nth-child(2),
+        .content-box-table table td:nth-child(2) {
+            width: 33%;
+        }
+        
+        .content-box-table table th:nth-child(3),
+        .content-box-table table td:nth-child(3) {
+            width: 34%;
+        }
+        
+        .content-box-table table {
+            border: none;
+        }
+        
+        .content-box-table th:first-child,
+        .content-box-table td:first-child {
+            border-left: none;
+        }
+        
+        .content-box-table th:last-child,
+        .content-box-table td:last-child {
+            border-right: none;
+        }
+        
+        .content-box-table tr:first-child th {
+            border-top: none;
+        }
+        
+        .content-box-table tr:last-child td {
+            border-bottom: none;
+        }
+        .content-box-table {
+            background-color: #D9D9D9;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -1.6%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .content-table {
+            margin: 3%;
+        }
+        @media (max-width: 1200px) {
+    .important-note, .important-note2, .important-note3 {
+        font-size: 1.4rem;
+    }
+    
+    .content-box ul {
+        font-size: 1.4rem;
+        padding-left: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .important-note, .important-note2, .important-note3 {
+        font-size: 1.3rem;
+    }
+    
+    .content-box ul {
+        font-size: 1.3rem;
+        padding-left: 60px;
+    }
+    
+    .important-note2, .important-note3 {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .important-note, .important-note2, .important-note3 {
+        font-size: 1.2rem;
+        padding: 15px;
+        width: 96%;
+    }
+    
+    .important-note {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .important-note2, .important-note3 {
+        width: 90%;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 35px auto;
+    }
+    
+    .content-box ul {
+        font-size: 1.2rem;
+        padding-left: 40px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+        .content-box img {
+        float: none;
+        margin: 0 auto 15px;
+    }
+    
+    .content-box ul {
+        padding-left: 40px;
+        clear: both;
+    }
+    
+    .content h2 {
+        float: none;
+        width: 100%;
+        margin: 0 auto 15px;
+    }
+    .content-box-table table {
+        font-size: 1rem;
+        min-width: 550px;
+    }
+    
+    .content-box-table th, 
+    .content-box-table td {
+        padding: 10px 12px;
+    }
+}
+
+    @media (max-width: 576px) {
+        .important-note, .important-note2, .important-note3 {
+            font-size: 1.1rem;
+            padding: 12px;
+            width: 98%;
+        }
+        
+        .important-note {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .important-note2, .important-note3 {
+            width: 95%;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 25px auto;
+        }
+        
+        .content-box ul {
+            font-size: 1.1rem;
+            padding-left: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+            .content-box {
+            padding: 15px;
+        }
+        
+        .content-box img {
+            float: none;
+            margin: 0 auto 10px;
+        }
+        
+        .content-box ul {
+            padding-left: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        
+        .content h2 {
+            float: none;
+            width: 100%;
+            margin: 0 auto 10px;
+        }
+    
+        .content-box-table table {
+        font-size: 0.9rem;
+        min-width: 700px;
+    }
+    
+    .content-box-table th, 
+    .content-box-table td {
+        padding: 8px 10px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .important-note, .important-note2, .important-note3 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    .important-note {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .important-note2, .important-note3 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .content-box ul {
+        font-size: 1rem;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+        .content-box-table table {
+        font-size: 0.85rem;
+        min-width: 650px;
+    }
+    
+    .content-box-table th, 
+    .content-box-table td {
+        padding: 6px 8px;
+    }
+}
+        
+    </style>
+    <elevenlabs-convai agent-id="agent_2801k9bskhmcfc390zchs5yd4y1d"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</head>
+<body>
+       <header>
+        <div class="logo">
+            <img src="../Pictures/logo.png" alt="Logo ng AlalayPasig">
+            <h3>AlalayPasig</h3>
+        </div>
+        <nav>
+            <a href="../navbar/homepage.html">Home</a>
+            <a href="../navbar/services.html" class="active">Mga Serbisyo</a>
+            <a href="../navbar/AboutUs.html">Tungkol sa Amin</a>
+            <a href="../navbar/contacts.html">Makipag-ugnayan</a>
+            <a href="../navbar/homepage1.html">Mag-log Out</a>
+        </nav>
+    </header>
+
+    <div class="services-header">
+        <div class="services-box"></div>
+        <div class="services-text">
+            <h2>APPLICATION SA ABORDABLE NA HOUSING</h2>
+        </div>
+    </div>
+
+    <p class="important-note"> Local Housing Application (Pasig City LGU)</p>
+
+    <div class="information">
+    <div class="content">
+        <h3>1. Tawagan ang Pasig City PDAO: </h3>
+        <div class="content-box">
+            <ul>
+                Ang primary office para sa public housing sa Pasig City ay ang Public Housing Division (PHD) sa ilalim ng Pasig Urban Settlement Office (PUSO). <br><br>
+
+                <b>Mga Hakbang sa Application:</b> <br><br>
+
+                1. Kumuha ng PWD ID: Siguraduhin na mayroon kang valid na Pasig City PWD ID mula sa Persons with Disability Affairs Office (PDAO), dahil ito ay prerequisite para sa local benefits.<br><br>
+
+                2. Humingi ng Application Form: Pumunta sa Pasig City PUSO – Public Housing Division (PHD) para humingi at kumpletuhin ang application form. <br><br>
+
+                3. Background Investigation: Ang PHD ay magko-conduct ng preliminary interview at background investigation para i-verify, i-validate, at i-qualify ang iyong pamilya bilang prospective beneficiary. <br><br>
+
+                4. Community Endorsement (Optional pero Inirerekomenda): Habang ang individual families ay maaaring mag-apply, maaari silang i-endorse sa isang community association (CA) na may ongoing housing proposal sa ilalim ng PUSO. Ang membership sa CA ay maaaring required para sa ilang projects.<br><br>
+
+                5. Orientation at Assignment: Kung qualified, dadalo ka sa orientation. Kung may available na housing unit, tutulungan ka sa unit assignment at relocation.<br><br>
+
+                <b>Mga Key Documentary Requirements:</b><br><br>
+
+                Kapag nagsusumite ng iyong application, maghanda na magbigay ng mga kopya ng mga sumusunod:<br><br> 
+
+                Application Form (mula sa PUSO – PHD) <br>
+                Voter's Certification/COMELEC Registration (Kasalukuyang taon) <br>
+                Certificate of No Property <br><br>
+
+                <b>Proof of Income:</b> <br>
+                Certificate of Employment and Compensation <br>
+                Pay-Slip / Monthly Income Affidavit <br>
+                Affidavit of Self-Employment (kung applicable) <br><br>
+
+                <b>Proof of Identity/Address:</b> <br>
+                Utility Bill (pinakabago) – MERALCO, PLDT, Manila Water, etc. <br>
+                Family Picture (pinakabago) <br><br>
+
+                <b>Marital Status:</b> <br>
+                Marriage Contract / Affidavit of Cohabitation (kung applicable)
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+<footer>
+    <div class="foot">
+        <div class="half">
+            <div class="logo">
+                <img src="../Pictures/logo.png" alt="Logo ng AlalayPasig">
+                <h3>AlalayPasig</h3>
+            </div>
+            <h3 class="p4">Nagkokonekta sa mga Taong May Kapansanan sa Pasig <br>City sa mga mahalagang serbisyo at resources na<br> nagpapabuti ng kalidad ng buhay.</h3>
+            <div class="sites">
+                <a href="https://www.facebook.com/people/AlalayPasig/61581784424488/"><img src="../Pictures/Facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/alalay_pasig/"><img src="../Pictures/Instagram.png" alt="Instagram"></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose/CllgCJTKWKqdkmhsxlpSrVQwQWBBZRpmqNGJHQRxKpzgFkCjTNDwMBvXnQzQVqVPCqXQpxwtcSB"><img src="../Pictures/Mail.png" alt="Email"></a>
+            </div>
+        </div>
+
+        <div class="half2">
+            <div class="links">
+                <h3>Mga Quick Links</h3>
+                <a href="../navbar/homepage.html">Home</a>
+                <a href="../navbar/AboutUs.html">Tungkol sa amin</a>
+                <a href="../navbar/services.html">Mga Serbisyo</a>
+                <a href="../navbar/contacts.html">Makipag-ugnayan</a>
+            </div>
+
+            <div class="contacts">
+                <h3>Makipag-ugnayan sa Amin</h3>
+                <p>Pasig City Hall, Caruncho Ave. Pasig City</p>
+                <p>alalaypasig@agmail.com</p>
+                <p>09952247885</p>
+                <p><a href="../navbar/contacts.html">Pahina ng Makipag-ugnayan</a></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="privacy">
+        <p class="left">©2025 AlalayPasig. Lahat ng karapatan ay nakalaan.</p>
+        <div class="right">
+            <p><a href="../navbar/Privacy and Policy.html">Patakaran sa Privacy</a></p>
+            <p><a href="../navbar/Privacy and Policy.html">Mga Tuntunin ng Serbisyo</a></p>
+            <p><a href="../navbar/Accessibility Statement.html">Pahayag sa Accessibility</a></p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
